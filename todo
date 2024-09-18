@@ -1,0 +1,23 @@
+1* build custom images:
+    1- db 
+    2- backend1
+    3- backend2
+    4- frontend
+2* create ns : devops_example
+3* create yaml files with environment variables from config map :
+    1- db : 
+          - name: MYSQL_ROOT_PASSWORD
+                value: password
+    2- frontend : 
+          - name: DB_HOST
+            value: db:3306
+          - name: DB_USERNAME
+            value: root
+          - name: DB_PASSWORD
+            value: password
+          - name: DB_NAME
+            value: myDB
+          - name: BACKEND_1_API
+            value: backend1
+          - name: BACKEND_2_API
+            value: backend2
